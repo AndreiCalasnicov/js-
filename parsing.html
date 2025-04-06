@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARSING</title>
+</head>
+<body>
+    
+<input type="text" id="phoneInput" placeholder="enter you namber phone nomber">
+
+<button onclick="parseNumber()">SEND</button>
+
+
+
+<div id="messageBox" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; width: 300px; min-height: 50px;">
+    <p>Сообщение появится здесь...</p>
+</div>
+
+<script>
+    function parseNumber() {
+        let phoneInput = document.getElementById('phoneInput');
+        let phoneNumber = phoneInput.value;
+        let messageBox = document.getElementById('messageBox'); // Контейнер для сообщений
+
+        // Очищаем содержимое messageBox перед добавлением нового сообщения
+        messageBox.innerHTML = '';
+
+        // Проверяем длину строки
+        if (phoneNumber.length < 8) {
+            messageBox.innerHTML = '<p style="color: red;">Phone number too short</p>';
+            return;
+        }
+
+        // Проверяем два условия
+        if (phoneNumber[0] == '+' &&
+            phoneNumber[1] == '3' &&
+            phoneNumber[2] == '7' &&
+            phoneNumber[3] == '3') {
+            messageBox.innerHTML = '<p style="color: green;">Money sent</p>';
+        } else if (phoneNumber[5] == '0' &&
+                   phoneNumber[6] == '6' &&
+                   phoneNumber[7] == '9') {
+            messageBox.innerHTML = '<p style="color: green;">Money sent</p>';
+        } else {
+            messageBox.innerHTML = '<p style="color: red;">Invalid phone number</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
