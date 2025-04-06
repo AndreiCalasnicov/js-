@@ -21,18 +21,10 @@
     function parseNumber() {
         let phoneInput = document.getElementById('phoneInput');
         let phoneNumber = phoneInput.value;
-        let messageBox = document.getElementById('messageBox'); // Контейнер для сообщений
+        let messageBox = document.getElementById('messageBox');
 
-        // Очищаем содержимое messageBox перед добавлением нового сообщения
-        messageBox.innerHTML = '';
+        
 
-        // Проверяем длину строки
-        if (phoneNumber.length < 8) {
-            messageBox.innerHTML = '<p style="color: red;">Phone number too short</p>';
-            return;
-        }
-
-        // Проверяем два условия
         if (phoneNumber[0] == '+' &&
             phoneNumber[1] == '3' &&
             phoneNumber[2] == '7' &&
