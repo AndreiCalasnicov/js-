@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MULTI INPUT FORM</title>
+</head>
+
+<body>
+<h2>Tour Participants </h2>
+
+
+    <form>
+        
+        <div>
+            <input id="in_1"   type="hidden">
+        </div>
+        <div>
+            <input id="in_2" type="hidden">
+        </div>
+        <div>
+            <input id="in_3" type="hidden">
+        </div>
+        <div>
+            <input id="in_4" type="hidden">
+        </div>
+        <div>
+            <input id="in_5" type="hidden">
+        </div>
+        <div>
+            <input id="in_6" type="hidden">
+        </div>
+        
+        
+        <button>+</button>
+    
+    </form>
+
+
+<script>
+   let tourists=[
+  "john",
+  "Marry",
+  "Pate",
+  "Pate"
+  
+   ]
+
+   for(let i=0; i < tourists.length; i++){
+
+   if(tourists[i] != undefined){
+    window['in_' + (i+1)].type="text"
+    window['in_' + (i+1)].value=tourists[i]
+   }
+}
+    
+</script>
+
+
+
+
+</body>
+
+</html>
